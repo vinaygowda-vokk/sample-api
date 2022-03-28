@@ -22,7 +22,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors();
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 3000);
   console.log(
     '\x1b[36m',
     `Application is running on url http://localhost:3000`,
