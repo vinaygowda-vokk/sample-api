@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "db-mysql-blr1-93049-do-user-11209990-0.b.db.ondigitalocean.com",
+  "port": 25060,
+  "username": "doadmin",
+  "password": "gK2pRFh1RIsHgkdb",
+  "database": "defaultdb",
+  "entities": [
+    "dist/**/*.entity{.ts,.js}"
+  ],
+  "synchronize": false
+}

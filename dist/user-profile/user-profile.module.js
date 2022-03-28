@@ -6,20 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.UserProfileModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const user_profile_module_1 = require("./user-profile/user-profile.module");
-let AppModule = class AppModule {
+const user_profile_service_1 = require("./user-profile.service");
+const user_profile_controller_1 = require("./user-profile.controller");
+const user_profile_entity_1 = require("./user-profile.entity");
+let UserProfileModule = class UserProfileModule {
 };
-AppModule = __decorate([
+UserProfileModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forRoot(), user_profile_module_1.UserProfileModule],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([user_profile_entity_1.user_profile])],
+        providers: [user_profile_service_1.UserProfileService],
+        controllers: [user_profile_controller_1.UserProfileController],
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], UserProfileModule);
+exports.UserProfileModule = UserProfileModule;
+//# sourceMappingURL=user-profile.module.js.map
