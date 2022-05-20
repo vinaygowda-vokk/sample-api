@@ -5,7 +5,7 @@ export declare class UserProfileService {
     constructor(userProfileRepository: Repository<user_profile>);
     getUsers(): Promise<user_profile[]>;
     getUser(id: number): Promise<user_profile>;
-    createUser(up: user_profile): Promise<user_profile>;
+    createUser(up: user_profile): Promise<user_profile | "User Exists">;
     remove(id: number): Promise<void>;
     edituserProfile(id: number, up: user_profile): Promise<user_profile>;
 }

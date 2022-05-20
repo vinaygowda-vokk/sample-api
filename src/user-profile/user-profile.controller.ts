@@ -40,7 +40,7 @@ export class UserProfileController {
   async create(@Body() userContact: user_profile) {
     try {
       const resp = await this.userService.createUser(userContact);
-      return resp;
+      return { data: resp };
     } catch (error) {
       throw new BadRequestException(error);
     }

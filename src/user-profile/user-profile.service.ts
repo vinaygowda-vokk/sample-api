@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, Ip, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { user_profile } from './user-profile.entity';
@@ -19,7 +19,14 @@ export class UserProfileService {
 
   async createUser(up: user_profile) {
     try {
-      return await this.userProfileRepository.save(up);
+      const isExisting = await this.userProfileRepository.find({
+        Aadhar: up.Aadhar,
+      });
+      if (isExisting.length > 0) {
+        return 'User Exists';
+      } else {
+        return await this.userProfileRepository.save(up);
+      }
     } catch (error) {
       throw error;
     }

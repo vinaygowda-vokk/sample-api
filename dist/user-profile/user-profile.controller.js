@@ -31,7 +31,7 @@ let UserProfileController = class UserProfileController {
     async create(userContact) {
         try {
             const resp = await this.userService.createUser(userContact);
-            return resp;
+            return { data: resp };
         }
         catch (error) {
             throw new common_1.BadRequestException(error);

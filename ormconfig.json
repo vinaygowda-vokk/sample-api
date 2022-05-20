@@ -1,9 +1,9 @@
 {
   "type": "mysql",
-  "host": "db-mysql-blr1-93049-do-user-11209990-0.b.db.ondigitalocean.com",
+  "host": "db-mysql-blr1-82994-do-user-11233361-0.b.db.ondigitalocean.com",
   "port": 25060,
-  "username": "doadmin",
-  "password": "gK2pRFh1RIsHgkdb",
+  "username": "vokk",
+  "password": "AVNS_4fV2XarMwjlOIN2",
   "database": "defaultdb",
   "entities": [
     "dist/**/*.entity{.ts,.js}"

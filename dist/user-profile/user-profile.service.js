@@ -29,7 +29,15 @@ let UserProfileService = class UserProfileService {
     }
     async createUser(up) {
         try {
-            return await this.userProfileRepository.save(up);
+            const isExisting = await this.userProfileRepository.find({
+                Aadhar: up.Aadhar,
+            });
+            if (isExisting.length > 0) {
+                return 'User Exists';
+            }
+            else {
+                return await this.userProfileRepository.save(up);
+            }
         }
         catch (error) {
             throw error;
